@@ -3,6 +3,7 @@ import React from "react";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 
 import { IoIosPeople } from "react-icons/io";
+import Profile from "./Profile.jpg";
 
 function Main() {
   return (
@@ -53,73 +54,80 @@ function Main() {
             <div className="flex w-full items-center justify-between">
               <div className="text-4xl text-indigo-950 dark:text-slate-400/20">
                 <FaMoneyBillTransfer />
-
               </div>
-              <div>
-                test
-              </div>
-              
-
+              <div>test</div>
             </div>
             <div className="font-extrabold text-4xl sm:text-2xl lg:text-xl text-indigo-950 dark:text-slate-400">
-                Total sales
-
-              </div>
-              <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-3xl font-semibold">
-              Nrs.1,20,000
-              </div>
+              Total sales
             </div>
-            <div className="flex flex-col justify-between w-full md:w-auto h-48 bg-white dark:bg-slate-600/50 p-4 rounded-md ">
+            <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-3xl font-semibold">
+              Nrs.1,20,000
+            </div>
+          </div>
+          <div className="flex flex-col justify-between w-full md:w-auto h-48 bg-white dark:bg-slate-600/50 p-4 rounded-md ">
             <div className="flex w-full items-center justify-between">
               <div className="text-4xl text-indigo-950 dark:text-slate-400/20">
                 <IoIosPeople />
-
               </div>
-              <div>
-                test
-              </div>
-              
-
+              <div>test</div>
             </div>
             <div className="font-extrabold text-4xl sm:text-2xl lg:text-xl text-indigo-950 dark:text-slate-400">
-                Total Members
-
-              </div>
-              <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-4xl font-semibold">
-              300
-              </div>
+              Total Members
             </div>
-            <div className="flex flex-col justify-between w-full md:w-auto h-48 bg-white dark:bg-slate-600/50 p-4 rounded-md ">
+            <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-4xl font-semibold">
+              300
+            </div>
+          </div>
+          <div className="flex flex-col justify-between w-full md:w-auto h-48 bg-white dark:bg-slate-600/50 p-4 rounded-md ">
             <div className="flex w-full items-center justify-between">
               <div className="text-4xl text-indigo-950 dark:text-slate-400/20">
                 <FaMoneyBillTransfer />
-
               </div>
-              <div>
-                test
-              </div>
-              
-
+              <div>test</div>
             </div>
             <div className="font-extrabold text-4xl sm:text-2xl lg:text-xl text-indigo-950 dark:text-slate-400">
-                Total sales
-
-              </div>
-              <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-3xl font-semibold">
-              Nrs.1,20,000
-              </div>
+              Total sales
             </div>
-          
-          
-
-        </div>
-        <div className="mt-3 mb-3 w-auto md:w-[70%] h-full ">
-          <div className="bg-white dark:bg-slate-400/50 rounded-md">
-            what
-            
-
+            <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-3xl font-semibold">
+              Nrs.1,20,000
+            </div>
           </div>
-
+        </div>
+        <div className="mt-3 mb-3 w-auto md:w-[100%] h-full ">
+          <div className="grid md:grid-cols-4 gap-4 m-4 w-auto bg-white dark:bg-slate-400/50 rounded-md ">
+            <div className="flex flex-col items-center justify-center mt-4 ">
+              <img
+                className="rounded-full w-12 h-12"
+                src={Profile}
+                alt="image description"
+              />
+              <div className="mt-2 text-2xl sm:text-xl lg:text-3xl">Sofia</div>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <img
+                className="rounded-full w-12 h-12"
+                src={Profile}
+                alt="image description"
+              />
+              <div className="mt-2 text-2xl sm:text-xl lg:text-3xl">Sofia</div>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <img
+                className="rounded-full w-12 h-12"
+                src={Profile}
+                alt="image description"
+              />
+              <div className="mt-2 text-2xl sm:text-xl lg:text-3xl">Sofia</div>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <img
+                className="rounded-full w-12 h-12"
+                src={Profile}
+                alt="image description"
+              />
+              <div className="mt-2 text-2xl sm:text-xl lg:text-3xl">Sofia</div>
+            </div>
+          </div>
         </div>
       </section>
       <section className="w-full md:w-[30%] bg-indigo-100 dark:bg-slate-950/20">
