@@ -11,7 +11,7 @@ import { IoLogOut } from "react-icons/io5";
 
 function Sidebar() {
   return (
-    <div className="h-screen bg-indigo-600 dark:bg-slate-100">
+    <div className="h-screen bg-slate-200 dark:bg-slate-100">
       <div className="flex flex-col gap-3 w-full text-slate-300 h-full justify-between">
         <div className="flex flex-col gap-10 px-4 mt-4">
           <div className="flex items-center justify-center gap-3">
