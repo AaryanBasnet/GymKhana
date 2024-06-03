@@ -1,20 +1,17 @@
-import { useState } from 'react'
-import Sidebar from './components/admin/sidebar/Sidebar'
-import Main from './components/admin/main/Main'
-import Member from './components/admin/main/Member';
-import Events from './components/admin/main/Events';
-import Trainer from './components/admin/main/Trainer';
-import Transaction from './components/admin/main/Transaction';
-import Analytics from './components/admin/main/Analytics';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useState } from "react";
+import Sidebar from "./components/admin/sidebar/Sidebar";
+import Main from "./components/admin/main/Main";
+import Member from "./components/admin/member/Member";
+import Events from "./components/admin/main/Events";
+import Trainer from "./components/admin/Trainer/Trainer";
+import Transaction from "./components/admin/main/Transaction";
+import Analytics from "./components/admin/main/Analytics";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-
-
   return (
-  
     <>
       <Router>
         <div className="flex h-screen bg-white dark:bg-zinc-200">
@@ -34,10 +31,7 @@ function App() {
         </div>
       </Router>
     </>
-
-      
-   
-  )
+  );
 }
 
-export default App
+export default App;
