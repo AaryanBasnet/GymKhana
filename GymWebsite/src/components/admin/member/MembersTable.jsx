@@ -1,6 +1,25 @@
 import React from 'react'
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { format } from "date-fns";
 
 function MembersTable() {
+  const [members, setMembers] = useState([]);
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/members/get");
+        console.log("Data fetched:", response.data.data);
+        setMembers(response?.data?.data || []);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        // If there's an error, set members as an empty array
+        setMembers([]);
+      }
+    };
+
+    fetchMembers();
+  }, []);
   return (
     <div>
       <div className="overflow-x-auto">
