@@ -29,6 +29,40 @@ function ContextWrapper({ children }) {
     const [showEventModel, setShowEventModel] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [savedEvents, dispatchCalEvent] = useReducer(saveEventsReducer, [], initEvents);
+    const [membersType, setMembersType] = useState({
+        basic: 0,
+        premium: 0,
+        standard: 0
+    });
+    useEffect(() => {
+        const fetchMembers = async () => {
+            try {
+                const [basicRes, premiumRes, standardRes] = await Promise.all([
+                    fetch("http://localhost:8080/members/count/basic"),
+                    fetch("http://localhost:8080/members/count/premium"),
+                    fetch("http://localhost:8080/members/count/standard"),
+                ]);
+
+                const [basic, premium, standard] = await Promise.all([
+                    basicRes.json(),
+                    premiumRes.json(),
+                    standardRes.json()
+                ]);
+
+                setMembersType({
+                    basic: basic.data,
+                    premium: premium.data,
+                    standard: standard.data
+                });
+            } catch (error) {
+                console.error("Error fetching members:", error);
+            }
+        };
+        fetchMembers();
+    }, []);
+
+
+    
 
     // Fetch events from backend and initialize state
     useEffect(() => {
@@ -67,7 +101,8 @@ function ContextWrapper({ children }) {
             dispatchCalEvent,
             selectedEvent,
             setSelectedEvent,
-            savedEvents
+            savedEvents,
+            membersType,
         }}>
             {children}
         </GlobalContext.Provider>

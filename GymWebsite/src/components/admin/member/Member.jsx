@@ -3,9 +3,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { format } from "date-fns";
 import SearchButton from "./SearchButton";
+import GlobalContext from "../../context/GlobalContext";
+import { useContext } from "react";
+import MemberTypeCard from "./MemberTypeCard";
 
 function Member() {
   const [members, setMembers] = useState([]);
+  const { membersType } = useContext(GlobalContext);
 
   useEffect(() => {
     const fetchMembers = async () => {
@@ -28,57 +32,41 @@ function Member() {
       <div className="flex flex-col md:flex-col bg-indigo-50 dark:bg-slate-900">
         <div className="flex md:flex-row w-full justify-between">
           <SearchButton />
-          
+
           <div className="mt-5 mb-4 me-10">
             <button className="bg-indigo-500  text-white px-3 py-1 rounded-md">
               Add Member
             </button>
           </div>
         </div>
-        <div className="ms-10 me-10 grid sm:grid-cols md:grid-cols-3 lg:grid-cols-3 gap-20 m-4 ">
+        {/* <div className="ms-10 me-10 grid sm:grid-cols md:grid-cols-3 lg:grid-cols-3 gap-20 m-4 ">
           <div className="flex flex-col justify-around  w-full md:w-auto h-40 bg-white dark:bg-slate-600/50 p-4 rounded-md ">
-            <div className="flex w-full items-center justify-between">
-              <div className="text-4xl text-indigo-950 dark:text-slate-400/20">
-                Icon
-              </div>
-              <div>test</div>
-            </div>
             <div className="font-extrabold text-4xl sm:text-2xl lg:text-xl text-indigo-950 dark:text-slate-400">
-              Total sales
+              Basic Members
             </div>
             <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-3xl font-semibold">
-              Nrs.1,20,000
+              {membersType.basic}
             </div>
           </div>
           <div className="flex flex-col justify-between w-full md:w-auto h-40 bg-white dark:bg-slate-600/50 p-4 rounded-md ">
-            <div className="flex w-full items-center justify-between">
-              <div className="text-4xl text-indigo-950 dark:text-slate-400/20">
-                Icon 2
-              </div>
-              <div>test</div>
-            </div>
             <div className="font-extrabold text-4xl sm:text-2xl lg:text-xl text-indigo-950 dark:text-slate-400">
-              Total Members
+              Standard Members
             </div>
             <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-4xl font-semibold">
-              300
+              {membersType.standard}
             </div>
           </div>
           <div className="flex flex-col justify-between w-full md:w-auto h-40 bg-white dark:bg-slate-600/50 p-4 rounded-md ">
-            <div className="flex w-full items-center justify-between">
-              <div className="text-4xl text-indigo-950 dark:text-slate-400/20">
-                Icon 3
-              </div>
-              <div>test</div>
-            </div>
             <div className="font-extrabold text-4xl sm:text-2xl lg:text-xl text-indigo-950 dark:text-slate-400">
-              Total sales
+              Premium members
             </div>
             <div className="text-indigo-950 dark:text-slate-400 text-2xl sm:text-xl lg:text-3xl font-semibold">
-              Nrs.1,20,000
+              {membersType.premium}
             </div>
           </div>
-        </div>
+        </div> */}
+        <MemberTypeCard />
+
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
