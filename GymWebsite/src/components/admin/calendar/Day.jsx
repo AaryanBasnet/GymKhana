@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import dayjs from "dayjs";
 import GlobalContext from '../../context/GlobalContext'
 
+
 function Day({ day, rowIdx }) {
   const [dayEvents, setDayEvents] = useState([]);
   const { setDaySelected, setShowEventModel, savedEvents, setSelectedEvent } =
